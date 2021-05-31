@@ -41,18 +41,15 @@ def float_value():
 
 
 def float_fn(float_rez):
-    in_float_rez = float(float_rez)
-    return in_float_rez
+    return float(float_rez)
 
 
 def str_fn(str_rez):
-    in_str_rez = str(str_rez)
-    return in_str_rez
+    return str(str_rez)
 
 
 def int_fn(int_rez):
-    in_int_rez = int(int_rez)
-    return in_int_rez
+    return int(int_rez)
 
 
 """Задание 1. Создать python модуль для реализации ввода через клавиатуру целочисленних значений
