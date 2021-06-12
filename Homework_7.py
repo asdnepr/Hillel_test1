@@ -20,9 +20,9 @@ st_3 = 0
 my_value = int(input('Введите число от 0 до 9: '))
 while st_3 < len(list_):
     if my_value == list_[st_3]:
-        print("Заданный элемент есть списке.")
+        print('Заданный элемент есть списке.')
         break
     else:
         st_3 += 1
 else:
-    print("Элемент не найден.")
+    print('Элемент не найден.')
