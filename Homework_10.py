@@ -1,3 +1,7 @@
+# def value_in_list(x):
+#     x = {k: [v] for k, v in x.items()}
+#     return x
+
 # Задача 1
 # Дано список словорей
 # [{'color': 'red', 'value': 'high'}, {'color': 'yellow', 'value': 'low'}]
@@ -7,20 +11,18 @@ my_list = [{'color': 'red', 'value': 'high'}, {'color': 'yellow', 'value': 'low'
 dict_1, dict_2 = my_list[0], my_list[1]
 print(dict_1)
 print(dict_2)
-dict_1 = dict_1(key, )
-# list_1, list_2, list_3, list_4 = list(dict_1.keys()), list(dict_2.keys()), list(dict_1.values()), list(dict_2.values())
-# for i, r in list_1, list_2:
-#     if list_1i) == list_2(r)
+dict_1 = {k: [v] for k, v in dict_1.items()}        #make a function
+dict_2 = {k: [v] for k, v in dict_2.items()}
+print(dict_1)
+print(dict_2)
+list_in_list = {k: dict_1.get(k, []) + dict_2.get(k, []) for k in {*dict_1, *dict_2}}
+tuples_in_list = list(list_in_list.values())
+print(tuples_in_list)
+print(list_in_list)
+tuples_in_list = [tuple(i) for i in tuples_in_list]
+print(tuples_in_list)
 
-# d1 = {'a': [1, 2, 3], 'b': [5], 'c': [5, 6, 9]}
-# d2 = {'a': [4], 'b': [8, 9, 0], 'd': [10, 14, 13]}
-#
-# list_1 = []
-# output = {k: list_1.append(dict_1.get(k, [])) and list_1.append(dict_2.get(k)) for k in {*dict_1, *dict_2}}
-# list_1 = tuple(output.values())
-# tt = tuple(list_1)
-# print(output)
-# print(tt)
+
 
 # list_1 = []
 # for item in dict_1.items(), dict_2.items():
