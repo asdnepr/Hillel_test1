@@ -1,26 +1,19 @@
-# def value_in_list(x):
-#     x = {k: [v] for k, v in x.items()}
-#     return x
-
 # Задача 1
 # Дано список словорей
 # [{'color': 'red', 'value': 'high'}, {'color': 'yellow', 'value': 'low'}]
 # создать список кортежей
 # [('red', 'high'), ('yellow', 'low')]
 my_list = [{'color': 'red', 'value': 'high'}, {'color': 'yellow', 'value': 'low'}]
-dict_1, dict_2 = my_list[0], my_list[1]
-print(dict_1)
-print(dict_2)
-dict_1 = {k: [v] for k, v in dict_1.items()}        #make a function
-dict_2 = {k: [v] for k, v in dict_2.items()}
-print(dict_1)
-print(dict_2)
-list_in_list = {k: dict_1.get(k, []) + dict_2.get(k, []) for k in {*dict_1, *dict_2}}
-tuples_in_list = list(list_in_list.values())
-print(tuples_in_list)
-print(list_in_list)
-tuples_in_list = [tuple(i) for i in tuples_in_list]
-print(tuples_in_list)
+# dict_1, dict_2 = my_list[0], my_list[1]
+# dict_1 = {k: [v] for k, v in dict_1.items()}        #make a function
+# dict_2 = {k: [v] for k, v in dict_2.items()}
+# list_in_list = {k: dict_1.get(k, []) + dict_2.get(k, []) for k in {*dict_1, *dict_2}}
+# tuples_in_list = list(list_in_list.values())
+# tuples_in_list = [tuple(i) for i in tuples_in_list]
+# print(tuples_in_list)
+rez_list = [tuple(value.values()) for value in my_list]
+print(rez_list)
+
 
 # Задача 2
 # Дано словарь
@@ -28,8 +21,8 @@ print(tuples_in_list)
 # преобразовать его в список кортежей
 # [('a', 1), ('b', 2), ('c', 3)]
 a_dictionary = {"a": 1, "b": 2, "c": 3}
-print(a_dictionary)
 print(list(a_dictionary.items()))
+
 
 # Задача 3
 # Дано два списка
@@ -39,7 +32,8 @@ print(list(a_dictionary.items()))
 # list_c = [(1,5), (2,6), (3,7), (4,8)]
 list_a = [1, 2, 3, 4]
 list_b = [5, 6, 7, 8]
-list_c = [(list_a[i], list_b[i]) for i in range(len(list_a))]
+list_c = list(zip(list_a, list_b))
+# list_c = [(list_a[i], list_b[i]) for i in range(len(list_a))]
 print(list_c)
 
 # Задача 4
