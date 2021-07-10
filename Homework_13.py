@@ -1,5 +1,4 @@
 # 1. Организовываете точку входа.
-
 # 2. В точке входа передаете главную функцию.
 
 # 3. Создаете какую-то функцию some_func, которая будет принимать позиционные и поименованные аргументы
@@ -18,4 +17,34 @@
 # в эту же функцию передаете и путь
 
 # 7 Результат скрипт сгенерирует json файл, с соответствующим контентом, например {‘name’: [1, 2], ‘make’: [3, 4]}
+import json
 
+
+def main():
+    pos_arg = list(range(1, 22))
+    print(pos_arg)
+    dict_args = some_func(*pos_arg, catfish="catfish", zander='zander', pike='pike', perch='perch', chub='chub')
+    print(dict_args)
+    load_dict(dict_args, "myjsonfile.json")
+    return dict_args
+
+
+def some_func(*args, **kwargs):
+    print(args)
+    print(kwargs)
+    dict_args = {}
+    print(len(args))
+    print(len(kwargs))
+    quotient = len(args) // len(kwargs)
+    for i, key in enumerate(kwargs.keys()):
+        dict_args.update({key: list(args[i*quotient: (i+1)*quotient])})
+    return dict_args
+
+
+def load_dict(some_dict, json_path):
+    with open(json_path, 'w', encoding='utf-8') as f:
+        json.dump(some_dict, f, ensure_ascii=False, indent=2)
+
+
+if __name__ == '__main__':
+    main()
