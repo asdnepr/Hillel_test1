@@ -60,19 +60,15 @@ def odd_number(list_):
 
 def main():
     gen_list_dict(n=random.randint(30, 100))
-    return gen_list_dict
-
-
-list_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-list_2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-list_3 = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
-
-
-list_1, list_2, list_3 = even_number(list_1), odd_number(list_2), even_number(list_3)
-print(list_1, list_2, list_3)
-list_4 = list(zip(list_1, list_2, list_3))
-sum_tuple = list(map(sum, list_4))
-print(sum_tuple)
+    list_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    list_2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    list_3 = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+    list_1, list_2, list_3 = even_number(list_1), odd_number(list_2), even_number(list_3)
+    print(list_1, list_2, list_3)
+    list_4 = list(zip(list_1, list_2, list_3))
+    sum_tuple = list(map(sum, list_4))
+    sum_tuple = odd_number(sum_tuple)
+    print(sum_tuple)
 
 
 if __name__ == '__main__':
