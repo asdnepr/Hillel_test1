@@ -21,3 +21,30 @@
 #
 # Код оформить в виде функций.
 # Код должен быть максимально автоматизирован!
+import datetime
+
+
+def decorator_datetime(function):
+    def wrapper(n):
+        start_time = datetime.datetime.now()
+        function(n)
+        print(f"Время выполнения: ", datetime.datetime.now() - start_time)
+    return wrapper
+
+
+@decorator_datetime
+def gen_list_dict(n):
+    my_list = []
+    for a in range(n+1):
+        my_dict = {num: num ** 2 for num in range(a + 1)}
+        my_list.append(my_dict)
+    print(my_list)
+
+
+def main():
+    gen_list_dict(n=int(input("Введите число: ")))
+    return gen_list_dict
+
+
+if __name__ == '__main__':
+    main()
