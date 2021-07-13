@@ -1,0 +1,62 @@
+{
+   "employee": {
+      "Tom Cruise": {
+         "int": [
+            "id",
+            "age"
+         ],
+         "string": [
+            "firstName",
+            "lastName",
+            "photo"
+         ],
+         "float": [
+            "salary"
+         ],
+         "none_type": [
+            "rewards"
+         ],
+         "bool": [
+            "is_active"
+         ]
+      },
+      "Maria Sharapova": {
+         "int": [
+            "id",
+            "age"
+         ],
+         "string": [
+            "firstName",
+            "lastName"
+         ],
+         "float": [
+            "salary"
+         ],
+         "none_type": [
+            "rewards"
+         ],
+         "bool": [
+            "is_active"
+         ]
+      },
+      "James Bond": {
+         "int": [
+            "id"
+         ],
+         "string": [
+            "firstName",
+            "lastName",
+            "photo"
+         ],
+         "float": [
+            "salary"
+         ],
+         "none_type": [
+            "rewards"
+         ],
+         "bool": [
+            "is_active"
+         ]
+      }
+   }
+}
