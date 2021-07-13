@@ -21,45 +21,39 @@
 #
 # Код оформить в виде функций.
 # Код должен быть максимально автоматизирован!
-import datetime
+from datetime import datetime
 import random
 
 
 def decorator_datetime(function):
     def wrapper(n):
-        start_time = datetime.datetime.now()
+        start_time = datetime.now()
         function(n)
-        print(f"Время выполнения: ", datetime.datetime.now() - start_time)
+        print(f"Время выполнения: ", datetime.now() - start_time)
     return wrapper
 
 
 @decorator_datetime
 def gen_list_dict(n):
     my_list = []
-    for a in range(n+1):
-        my_dict = {num: num ** 2 for num in range(a + 1)}
+    for i in range(n+1):
+        my_dict = {num: num ** 2 for num in range(i + 1)}
         my_list.append(my_dict)
     print(my_list)
 
 
 def even_number(list_):
-    list_t = []
-    for i in list_:
-        if i % 2 == 0:
-            list_t.append(i)
-    return list_t
+    list_ = list(filter(lambda j: j % 2 == 0, list_))
+    return list_
 
 
 def odd_number(list_):
-    list_t = []
-    for i in list_:
-        if i % 2 != 0:
-            list_t.append(i)
-    return list_t
+    list_ = list(filter(lambda i: i % 2 != 0, list_))
+    return list_
 
 
 def main():
-    gen_list_dict(n=random.randint(30, 100))
+    gen_list_dict(n=random.randint(40, 200))
     list_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     list_2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     list_3 = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
